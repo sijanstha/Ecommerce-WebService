@@ -6,9 +6,11 @@ import javax.servlet.*;
 public class DBConnection {
 
     private Connection objConn = null;
-    private String server = "110.44.116.71";
+    //initialize the server name of SQL Server
+    private String server = "";
     private String user = "sa";
-    private String pass = "X@mpP890";
+    //password for SQL server
+    private String pass = "";
     //private int port = 49991;
     private int port = 1433;
     private String dbName = "db_eCommerce";
