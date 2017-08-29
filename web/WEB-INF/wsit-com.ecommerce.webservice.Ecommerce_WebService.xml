@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Ecommerce_WebService" targetNamespace="http://webservice.ecommerce.com/" xmlns:tns="http://webservice.ecommerce.com/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsrm="http://docs.oasis-open.org/ws-rx/wsrmp/200702" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" 
+ >
+    <message name="APP_VALIDATION"/>
+    <message name="APP_VALIDATIONResponse"/>
+    <message name="REGISTER_CUSTOMER"/>
+    <message name="REGISTER_CUSTOMERResponse"/>
+    <message name="CUSTOMER_AUTHENTICATION"/>
+    <message name="CUSTOMER_AUTHENTICATIONResponse"/>
+    <message name="FETCH_CATEGORY"/>
+    <message name="FETCH_CATEGORYResponse"/>
+    <message name="FETCH_PRODUCT"/>
+    <message name="FETCH_PRODUCTResponse"/>
+    <message name="FETCH_PRODUCT_DETAIL"/>
+    <message name="FETCH_PRODUCT_DETAILResponse"/>
+    <message name="TRANSACTION_CREATE"/>
+    <message name="TRANSACTION_CREATEResponse"/>
+    <message name="TRANSACTION_CANCEL"/>
+    <message name="TRANSACTION_CANCELResponse"/>
+    <message name="TRANSACTION_PAYMENT"/>
+    <message name="TRANSACTION_PAYMENTResponse"/>
+    <message name="TRANSACTION_DETAILS"/>
+    <message name="TRANSACTION_DETAILSResponse"/>
+    <message name="CUSTOMER_LOGOUT"/>
+    <message name="CUSTOMER_LOGOUTResponse"/>
+    <portType name="Ecommerce_WebService">
+        <operation name="APP_VALIDATION">
+            <input message="tns:APP_VALIDATION"/>
+            <output message="tns:APP_VALIDATIONResponse"/>
+        </operation>
+        <operation name="REGISTER_CUSTOMER">
+            <input message="tns:REGISTER_CUSTOMER"/>
+            <output message="tns:REGISTER_CUSTOMERResponse"/>
+        </operation>
+        <operation name="CUSTOMER_AUTHENTICATION">
+            <input message="tns:CUSTOMER_AUTHENTICATION"/>
+            <output message="tns:CUSTOMER_AUTHENTICATIONResponse"/>
+        </operation>
+        <operation name="FETCH_CATEGORY">
+            <input message="tns:FETCH_CATEGORY"/>
+            <output message="tns:FETCH_CATEGORYResponse"/>
+        </operation>
+        <operation name="FETCH_PRODUCT">
+            <input message="tns:FETCH_PRODUCT"/>
+            <output message="tns:FETCH_PRODUCTResponse"/>
+        </operation>
+        <operation name="FETCH_PRODUCT_DETAIL">
+            <input message="tns:FETCH_PRODUCT_DETAIL"/>
+            <output message="tns:FETCH_PRODUCT_DETAILResponse"/>
+        </operation>
+        <operation name="TRANSACTION_CREATE">
+            <input message="tns:TRANSACTION_CREATE"/>
+            <output message="tns:TRANSACTION_CREATEResponse"/>
+        </operation>
+        <operation name="TRANSACTION_CANCEL">
+            <input message="tns:TRANSACTION_CANCEL"/>
+            <output message="tns:TRANSACTION_CANCELResponse"/>
+        </operation>
+        <operation name="TRANSACTION_PAYMENT">
+            <input message="tns:TRANSACTION_PAYMENT"/>
+            <output message="tns:TRANSACTION_PAYMENTResponse"/>
+        </operation>
+        <operation name="TRANSACTION_DETAILS">
+            <input message="tns:TRANSACTION_DETAILS"/>
+            <output message="tns:TRANSACTION_DETAILSResponse"/>
+        </operation>
+        <operation name="CUSTOMER_LOGOUT">
+            <input message="tns:CUSTOMER_LOGOUT"/>
+            <output message="tns:CUSTOMER_LOGOUTResponse"/>
+        </operation>
+    </portType>
+    <binding name="Ecommerce_WebServicePortBinding" type="tns:Ecommerce_WebService">
+        <operation name="APP_VALIDATION">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="REGISTER_CUSTOMER">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="CUSTOMER_AUTHENTICATION">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="FETCH_CATEGORY">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="FETCH_PRODUCT">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="FETCH_PRODUCT_DETAIL">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="TRANSACTION_CREATE">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="TRANSACTION_CANCEL">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="TRANSACTION_PAYMENT">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="TRANSACTION_DETAILS">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="CUSTOMER_LOGOUT">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="Ecommerce_WebService">
+        <port name="Ecommerce_WebServicePort" binding="tns:Ecommerce_WebServicePortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_FETCH_CATEGORY_ITEMS_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_FETCH_CATEGORY_ITEMS_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_FETCH_CATEGORY_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_FETCH_CATEGORY_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_FETCH_PRODUCT_BY_ID_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_FETCH_PRODUCT_BY_ID_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_TRANSACTION_DETAIL_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_TRANSACTION_DETAIL_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_TRANSACTION_DETAILS_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="Ecommerce_WebServicePortBinding_TRANSACTION_DETAILS_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>
